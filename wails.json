@@ -1,0 +1,10 @@
+{
+  "name": "pf_game_set",
+  "outputfilename": "pf_game_set",
+  "frontend:install": "",
+  "frontend:build": "",
+  "author": {
+    "name": "PFinal_南丞",
+    "email": "1370288056@qq.com"
+  }
+}

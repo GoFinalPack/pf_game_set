@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+    <!-- Main Source Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body id="app" class="app">
+<div class="container">
+  <div class="main-content">
+    <div class="sidebar">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#" data-page="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="#" data-page="projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="#" data-page="tasks"><i class="fas fa-tasks"></i> Tasks</a></li>
+        <li><a href="#" data-page="settings"><i class="fas fa-cog"></i> Settings</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div id="dashboard" class="page active">
+        <h2>Welcome to Your Desktop App</h2>
+        <div class="content-placeholder">
+          This is where your main content would go. You can add tables, forms, or any other elements here.
+        </div>
+        <div class="content-placeholder">
+          Add more sections as needed for your application.
+        </div>
+      </div>
+      <div id="projects" class="page">
+        <h2>Projects</h2>
+        <div class="project-list">
+          <a onclick="greet(this)" data="2048">
+            <div class="project-item">
+              <img src="./games/2048/assets/logo.png" alt="Project 1" class="project-avatar">
+              <p>2048</p>
+            </div>
+          </a>
+          <div class="project-item">
+            <img src="./games/2048/assets/logo.png" alt="Project 2" class="project-avatar">
+            <p>Project 2</p>
+          </div>
+          <div class="project-item">
+            <img src="https://picsum.photos/id/3/200" alt="Project 3" class="project-avatar">
+            <p>Project 3</p>
+          </div>
+          <div class="project-item">
+            <img src="https://picsum.photos/id/4/200" alt="Project 4" class="project-avatar">
+            <p>Project 4</p>
+          </div>
+          <div class="project-item">
+            <img src="https://picsum.photos/id/5/200" alt="Project 5" class="project-avatar">
+            <p>Project 5</p>
+          </div>
+          <div class="project-item">
+            <img src="https://picsum.photos/id/6/200" alt="Project 6" class="project-avatar">
+            <p>Project 6</p>
+          </div>
+        </div>
+      </div>
+      <div id="tasks" class="page">
+        <h2>Tasks</h2>
+        <div class="content-placeholder">
+          Your tasks will be displayed here.
+        </div>
+      </div>
+      <div id="settings" class="page">
+        <h2>Settings</h2>
+        <div class="content-placeholder">
+          Application settings can be configured here.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="status-bar">
+    Status: Ready | Version 1.0.0
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+    const pages = document.querySelectorAll('.page');
+
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pageId = this.getAttribute('data-page');
+        pages.forEach(page => {
+          page.classList.remove('active');
+        });
+        document.getElementById(pageId).classList.add('active');
+      });
+    });
+  });
+</script>
+</body>
+
+</html>
