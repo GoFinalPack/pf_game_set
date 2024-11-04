@@ -6,99 +6,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge, Chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
-    <!-- Main Source Files -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <script src="main.js"></script>
 </head>
-<body id="app" class="app">
-<div class="container">
-  <div class="main-content">
-    <div class="sidebar">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="#" data-page="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-        <li><a href="#" data-page="projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-        <li><a href="#" data-page="tasks"><i class="fas fa-tasks"></i> Tasks</a></li>
-        <li><a href="#" data-page="settings"><i class="fas fa-cog"></i> Settings</a></li>
-      </ul>
+<body id="app" class="app bg-gray-100 dark:bg-gray-900">
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <aside class="w-50 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 pt-5">
+    <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+      <span class="text-2xl font-semibold text-gray-800 dark:text-white">PF_Game</span>
+      <button class="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+        <i class="lucide lucide-chevron-down text-gray-500 dark:text-gray-400"></i>
+      </button>
     </div>
-    <div class="content">
-      <div id="dashboard" class="page active">
-        <h2>Welcome to Your Desktop App</h2>
-        <div class="content-placeholder">
-          This is where your main content would go. You can add tables, forms, or any other elements here.
-        </div>
-        <div class="content-placeholder">
-          Add more sections as needed for your application.
-        </div>
-      </div>
-      <div id="projects" class="page">
-        <h2>Projects</h2>
-        <div class="project-list">
-          <a onclick="greet(this)" data="2048">
-            <div class="project-item">
-              <img src="./games/2048/assets/logo.png" alt="Project 1" class="project-avatar">
-              <p>2048</p>
-            </div>
+    <nav class="p-4">
+      <ul class="space-y-2">
+        <li>
+          <a href="#" class="flex items-center p-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+            <i class="lucide lucide-layout mr-3"></i>
+            首页
           </a>
-          <div class="project-item">
-            <img src="./games/2048/assets/logo.png" alt="Project 2" class="project-avatar">
-            <p>Project 2</p>
-          </div>
-          <div class="project-item">
-            <img src="https://picsum.photos/id/3/200" alt="Project 3" class="project-avatar">
-            <p>Project 3</p>
-          </div>
-          <div class="project-item">
-            <img src="https://picsum.photos/id/4/200" alt="Project 4" class="project-avatar">
-            <p>Project 4</p>
-          </div>
-          <div class="project-item">
-            <img src="https://picsum.photos/id/5/200" alt="Project 5" class="project-avatar">
-            <p>Project 5</p>
-          </div>
-          <div class="project-item">
-            <img src="https://picsum.photos/id/6/200" alt="Project 6" class="project-avatar">
-            <p>Project 6</p>
-          </div>
-        </div>
+        </li>
+        <li>
+          <a href="#" class="flex items-center p-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 game-list">
+            <i class="lucide lucide-list mr-3"></i>
+            游戏列表
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col overflow-hidden">
+    <!-- Top Bar -->
+    <header class="flex items-center justify-between h-16 px-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+      <div class="flex items-center">
+        <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 mr-4">
+          <i class="lucide lucide-search text-gray-500 dark:text-gray-400"></i>
+        </button>
+        <input type="text" placeholder="Search projects..." class="w-64 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
       </div>
-      <div id="tasks" class="page">
-        <h2>Tasks</h2>
-        <div class="content-placeholder">
-          Your tasks will be displayed here.
-        </div>
+      <div class="flex items-center space-x-4">
+        <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 relative">
+          <i class="lucide lucide-bell text-gray-500 dark:text-gray-400"></i>
+          <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+        </button>
+        <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+          <i class="lucide lucide-settings text-gray-500 dark:text-gray-400"></i>
+        </button>
+        <button class="flex items-center space-x-2">
+          <img src="https://via.placeholder.com/32" alt="User Avatar" class="w-8 h-8 rounded-full">
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200">John Doe</span>
+        </button>
       </div>
-      <div id="settings" class="page">
-        <h2>Settings</h2>
-        <div class="content-placeholder">
-          Application settings can be configured here.
-        </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="flex-1 overflow-y-auto p-6">
+      <h1 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Projects Overview</h1>
+      <div id="projectsGrid" class="grid grid-cols-3 gap-6">
+        <!-- Project cards will be dynamically inserted here -->
       </div>
-    </div>
-  </div>
-  <div class="status-bar">
-    Status: Ready | Version 1.0.0
+    </main>
   </div>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const sidebarLinks = document.querySelectorAll('.sidebar a');
-    const pages = document.querySelectorAll('.page');
-
-    sidebarLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const pageId = this.getAttribute('data-page');
-        pages.forEach(page => {
-          page.classList.remove('active');
-        });
-        document.getElementById(pageId).classList.add('active');
-      });
-    });
+  const projectsGrid = document.getElementById('projectsGrid');
+  projects.forEach(project => {
+    projectsGrid.innerHTML += createProjectCard(project);
   });
+  // You can call toggleDarkMode() when a dark mode button is clicked
+  // For this example, let's toggle dark mode when the settings button is clicked
+  document.querySelector('.lucide-settings').parentElement.addEventListener('click', toggleDarkMode);
+  document.querySelector('.game-list').addEventListener('click', createGameCard);
 </script>
 </body>
-
 </html>
